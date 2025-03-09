@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AppFood - Recettes</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>AppFood</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../../index.html">Accueil</a></li>
+                    <li><a href="#">Restaurants</a></li>
+                    <li><a href="recipes.html" class="active">Recettes</a></li>
+                    <li><a href="#" id="login-btn">Connexion</a></li>
+                    <li><a href="#" id="register-btn">Inscription</a></li>
+                    <li><a href="#" id="logout-btn" class="hidden">Déconnexion</a></li>
+                    <li><a href="profile.html" id="profile-link">Mon Profil</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero recipes-hero">
+            <div class="container">
+                <h2>Découvrez nos délicieuses recettes</h2>
+                <p>Explorez notre collection de recettes et trouvez votre prochain plat préféré</p>
+                <div class="search-bar">
+                    <input type="text" id="recipe-search-input" placeholder="Rechercher par nom, ingrédients...">
+                    <button id="recipe-search-btn">Rechercher</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="recipes-content">
+            <div class="container">
+                <div class="recipes-filters">
+                    <div class="sort-options">
+                        <h3>Trier par :</h3>
+                        <div class="sort-buttons">
+                            <button class="sort-btn" data-sort="rating" data-order="desc">
+                                <i class="fas fa-star"></i> Note
+                                <i class="fas fa-sort-down"></i>
+                            </button>
+                            <button class="sort-btn" data-sort="prepTime" data-order="asc">
+                                <i class="fas fa-clock"></i> Temps de préparation
+                                <i class="fas fa-sort-up"></i>
+                            </button>
+                            <button class="sort-btn" data-sort="ingredients" data-order="asc">
+                                <i class="fas fa-list"></i> Nombre d'ingrédients
+                                <i class="fas fa-sort-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="add-recipe">
+                        <button id="add-recipe-btn" class="btn primary-btn">
+                            <i class="fas fa-plus"></i> Ajouter ma recette
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="recipes-container" class="recipes-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Recipe Form Modal -->
+    <div id="recipe-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal" id="close-recipe-modal">&times;</span>
+            <div id="recipe-form" class="form">
+                <h2>Ajouter une nouvelle recette</h2>
+                <form id="recipe-form-element">
+                    <div class="form-group">
+                        <label for="recipe-name">Nom de la recette</label>
+                        <input type="text" id="recipe-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-description">Description</label>
+                        <textarea id="recipe-description" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-category">Catégorie</label>
+                        <select id="recipe-category" required>
+                            <option value="">Sélectionner une catégorie</option>
+                            <option value="Entrée">Entrée</option>
+                            <option value="Plat principal">Plat principal</option>
+                            <option value="Dessert">Dessert</option>
+                            <option value="Boisson">Boisson</option>
+                            <option value="Apéritif">Apéritif</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-image">URL de l'image</label>
+                        <input type="url" id="recipe-image" placeholder="https://example.com/image.jpg" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="recipe-prep-time">Temps de préparation (min)</label>
+                            <input type="number" id="recipe-prep-time" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipe-cook-time">Temps de cuisson (min)</label>
+                            <input type="number" id="recipe-cook-time" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipe-servings">Nombre de portions</label>
+                            <input type="number" id="recipe-servings" min="1" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-difficulty">Difficulté</label>
+                        <select id="recipe-difficulty" required>
+                            <option value="">Sélectionner une difficulté</option>
+                            <option value="Facile">Facile</option>
+                            <option value="Moyen">Moyen</option>
+                            <option value="Difficile">Difficile</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-ingredients">Ingrédients (un par ligne)</label>
+                        <textarea id="recipe-ingredients" rows="5" placeholder="200g de farine&#10;2 œufs&#10;100g de sucre" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-instructions">Instructions (une étape par ligne)</label>
+                        <textarea id="recipe-instructions" rows="5" placeholder="Mélanger les ingrédients secs&#10;Ajouter les œufs&#10;Cuire au four à 180°C" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Ajouter la recette</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div id="auth-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="login-form" class="auth-form">
+                <h2>Connexion</h2>
+                <form id="login-form-element">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mot de passe</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <button type="submit">Se connecter</button>
+                </form>
+            </div>
+            <div id="register-form" class="auth-form hidden">
+                <h2>Inscription</h2>
+                <form id="register-form-element">
+                    <div class="form-group">
+                        <label for="register-name">Nom</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Mot de passe</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password-confirm">Confirmer le mot de passe</label>
+                        <input type="password" id="register-password-confirm" required>
+                    </div>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 AppFood. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script type="module" src="../js/recipes.js"></script>
+</body>
+</html>

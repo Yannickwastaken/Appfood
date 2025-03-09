@@ -1,0 +1,3 @@
+@echo off
+echo Starting MongoDB server for AppFood...
+node server.js

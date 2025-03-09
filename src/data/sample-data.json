@@ -1,0 +1,161 @@
+{
+  "restaurants": [
+    {
+      "id": "rest1",
+      "name": "Le Bistrot Parisien",
+      "description": "Un restaurant traditionnel français au cœur de Paris",
+      "cuisine": "Française",
+      "address": "15 Rue de Rivoli, 75001 Paris",
+      "phone": "+33 1 42 33 44 55",
+      "website": "https://lebistrotparisien.fr",
+      "rating": 4.5,
+      "priceRange": "€€",
+      "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "lat": 48.856614,
+      "lng": 2.3522219,
+      "openingHours": {
+        "monday": "12:00-22:00",
+        "tuesday": "12:00-22:00",
+        "wednesday": "12:00-22:00",
+        "thursday": "12:00-22:00",
+        "friday": "12:00-23:00",
+        "saturday": "12:00-23:00",
+        "sunday": "12:00-22:00"
+      }
+    },
+    {
+      "id": "rest2",
+      "name": "Sushi Sakura",
+      "description": "Les meilleurs sushis de la ville",
+      "cuisine": "Japonaise",
+      "address": "8 Rue Sainte-Anne, 75001 Paris",
+      "phone": "+33 1 42 96 65 98",
+      "website": "https://sushisakura.fr",
+      "rating": 4.7,
+      "priceRange": "€€€",
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "lat": 48.8649,
+      "lng": 2.3401,
+      "openingHours": {
+        "monday": "11:30-14:30, 18:30-22:30",
+        "tuesday": "11:30-14:30, 18:30-22:30",
+        "wednesday": "11:30-14:30, 18:30-22:30",
+        "thursday": "11:30-14:30, 18:30-22:30",
+        "friday": "11:30-14:30, 18:30-23:00",
+        "saturday": "18:30-23:00",
+        "sunday": "Fermé"
+      }
+    },
+    {
+      "id": "rest3",
+      "name": "Pizzeria Napoli",
+      "description": "Authentiques pizzas napolitaines cuites au feu de bois",
+      "cuisine": "Italienne",
+      "address": "12 Rue des Lombards, 75004 Paris",
+      "phone": "+33 1 44 54 39 95",
+      "website": "https://pizzerianapoli.fr",
+      "rating": 4.3,
+      "priceRange": "€€",
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80",
+      "lat": 48.8584,
+      "lng": 2.3488,
+      "openingHours": {
+        "monday": "12:00-14:30, 19:00-22:30",
+        "tuesday": "12:00-14:30, 19:00-22:30",
+        "wednesday": "12:00-14:30, 19:00-22:30",
+        "thursday": "12:00-14:30, 19:00-22:30",
+        "friday": "12:00-14:30, 19:00-23:00",
+        "saturday": "12:00-15:00, 19:00-23:00",
+        "sunday": "19:00-22:30"
+      }
+    }
+  ],
+  "recipes": [
+    {
+      "id": "recipe1",
+      "name": "Bœuf Bourguignon",
+      "description": "Un classique de la cuisine française, mijoté lentement avec du vin rouge",
+      "category": "Plat principal",
+      "restaurant_id": "rest1",
+      "ingredients": [
+        "1kg de bœuf pour bourguignon",
+        "200g de lardons",
+        "2 oignons",
+        "2 carottes"
+      ],
+      "instructions": [
+        "Faire revenir les lardons dans une cocotte",
+        "Ajouter la viande et faire dorer",
+        "Ajouter les oignons et les carottes émincés",
+        "Verser le vin rouge et ajouter les herbes",
+        "Laisser mijoter à feu doux pendant 3 heures",
+        "Servir avec des pommes de terre"
+      ],
+      "prepTime": 30,
+      "cookTime": 180,
+      "servings": 6,
+      "difficulty": "Moyen",
+      "image": "https://images.unsplash.com/photo-1534766555764-ce878a5e3a2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+    },
+    {
+      "id": "recipe2",
+      "name": "Sushi California Roll",
+      "description": "Délicieux rouleaux de sushi avec avocat et crabe",
+      "category": "Entrée",
+      "restaurant_id": "rest2",
+      "ingredients": [
+        "Riz à sushi",
+        "Feuilles de nori",
+        "Avocat",
+        "Surimi ou chair de crabe",
+        "Concombre",
+        "Graines de sésame",
+        "Vinaigre de riz",
+        "Wasabi et gingembre mariné"
+      ],
+      "instructions": [
+        "Préparer le riz à sushi avec le vinaigre",
+        "Placer une feuille de nori sur un tapis de bambou",
+        "Étaler une couche de riz sur la feuille",
+        "Disposer les bâtonnets d'avocat, de surimi et de concombre",
+        "Rouler fermement et couper en 6-8 morceaux",
+        "Saupoudrer de graines de sésame"
+      ],
+      "prepTime": 45,
+      "cookTime": 15,
+      "servings": 4,
+      "difficulty": "Difficile",
+      "image": "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+    },
+    {
+      "id": "recipe3",
+      "name": "Pizza Margherita",
+      "description": "La pizza classique italienne avec tomate, mozzarella et basilic",
+      "category": "Plat principal",
+      "restaurant_id": "rest3",
+      "ingredients": [
+        "250g de farine",
+        "150ml d'eau tiède",
+        "10g de levure fraîche",
+        "1 cuillère à café de sel",
+        "400g de tomates concassées",
+        "250g de mozzarella",
+        "Basilic frais",
+        "Huile d'olive"
+      ],
+      "instructions": [
+        "Préparer la pâte et laisser lever 1h",
+        "Étaler la pâte en cercle",
+        "Étaler la sauce tomate",
+        "Ajouter la mozzarella en morceaux",
+        "Cuire au four à 250°C pendant 10-12 minutes",
+        "Ajouter le basilic frais et un filet d'huile d'olive"
+      ],
+      "prepTime": 70,
+      "cookTime": 12,
+      "servings": 2,
+      "difficulty": "Facile",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+    }
+  ]
+}
