@@ -1,5 +1,3 @@
-
-Copy
 # AppFood - Application Web de Recettes et Restaurants
 
 Application web unifiée pour explorer des recettes et des restaurants, avec un système d'authentification et de gestion des favoris.
@@ -79,9 +77,7 @@ Recettes : Détails des recettes (ingrédients, instructions, temps de préparat
 Utilisateurs : Informations d'authentification (nom, email, mot de passe).
 
 Schéma des Données
-Restaurant
-json
-Copy
+Restaurant.json
 {
   "id": "string",
   "name": "string",
@@ -105,9 +101,7 @@ Copy
     "sunday": "string"
   }
 }
-Recette
-json
-Copy
+Recette.json
 {
   "id": "string",
   "name": "string",

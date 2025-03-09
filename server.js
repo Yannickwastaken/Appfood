@@ -11,10 +11,7 @@ const MONGODB_URI = process.env.MONGODB_URI;
 
 console.log('Tentative de connexion à MongoDB avec l\'URI:', MONGODB_URI);
 
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(MONGODB_URI)
 .then(() => {
   console.log('✅ Connecté à MongoDB Atlas avec succès');
   startServer();
